@@ -33,12 +33,12 @@ router.post('/', (req, res) => {
     });
     po.save((err, doc)=>{
        if(!err){res.send(doc);
-        const accountSid = 'ACe749e98354fe7a37b7582dcf5f9ea790';
-            const authToken = '2869b92854cefb0f95e0fc73399ef927';
+        const accountSid = '';
+            const authToken = '';
             const client = require('twilio')(accountSid, authToken);
             
             client.messages
-                  .create({from: '+18633757748', body: req.body.driverId, to: '+94774739464'})
+                  .create({from: '', body: req.body.driverId, to: ''})
                   .then(message => console.log(message.sid))
                   .done();
        

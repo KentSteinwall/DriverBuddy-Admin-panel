@@ -74,7 +74,7 @@ router.post('/user', (req, res) => {
                   user: 'dbuddyucsc@gmail.com',
                   secure: false, // use SSL
                   port: 25,
-                  pass: 'DBucsc@123'
+                  pass: ''
                 },
                 tls: {
                     rejectUnauthorized: false
