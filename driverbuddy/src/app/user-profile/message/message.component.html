@@ -1,0 +1,39 @@
+<app-home></app-home>
+<div class="main" >
+  
+    <form #profileForm="ngForm" (ngSubmit)="profileForm.valid && onSubmit(profileForm)">
+      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="UserProfileService.selectEmployee._id">
+      <input type="text" #driverId="ngModel" [(ngModel)]="UserProfileService.selectEmployee.driverId" name="driverId" placeholder="Enter driver nic"
+      required [pattern]="nicRegex"  [ngClass]="{'invalid-textbox' :profileForm.submitted && !driverId.valid }">
+      <div *ngIf="profileForm.submitted && driverId.errors">
+       <label *ngIf="driverId.errors.required" class="validation-message">This field is required.</label>
+       <label *ngIf="driverId.errors.pattern" class="validation-message">Invalid NIC address.</label>
+     </div><br>
+   
+      <input type="text" #mobile="ngModel" [(ngModel)]="UserProfileService.selectEmployee.mobile" name="mobile" placeholder="Enter Mobile Number"
+      required  [ngClass]="{'invalid-textbox' :profileForm.submitted && !mobile.valid }">
+      <div *ngIf="profileForm.submitted && !mobile.valid">
+        <label class="validation-message">This field is required.</label>
+      </div><br>
+      
+      
+  
+      
+      <input type="submit" value="Send">
+      
+      <br>
+      
+  </form>
+  
+  <!-- Success message -->
+  <div class="success" *ngIf="showSucessMessage">
+      Saved successfully
+    </div>
+    
+    <!-- Error message -->
+    <div class="alert" *ngIf="serverErrorMessages">
+      {{serverErrorMessages}}
+    </div>
+    
+  </div>
+  
