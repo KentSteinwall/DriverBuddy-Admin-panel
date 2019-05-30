@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//const User = mongoose.model('Insurance');
+const User2 = mongoose.model('Insurance');
 const express = require('express');
 var router = express.Router();
 var ObjectId =require('mongoose').Types.ObjectId;
