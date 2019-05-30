@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
-//import { UserProfileComponent } from './user-profile/user-profile.component';
+
 
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
