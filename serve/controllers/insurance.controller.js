@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-//const User = mongoose.model('Insurance');
-//const User1 = mongoose.model('User');
 const express = require('express');
 var router = express.Router();
 var ObjectId =require('mongoose').Types.ObjectId;
@@ -70,15 +68,6 @@ router.post('/user', (req, res) => {
     });
      ins.save((err,doc) => {
         if(!err){res.send(doc);
-            
-           /* const accountSid = 'ACe749e98354fe7a37b7582dcf5f9ea790';
-            const authToken = '2869b92854cefb0f95e0fc73399ef927';
-            const client = require('twilio')(accountSid, authToken);
-            
-            client.messages
-                  .create({from: '+4092260904', body: 'body', to: '+94774739464'})
-                  .then(message => console.log(message.sid))
-                  .done();*/
             var transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
